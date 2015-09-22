@@ -108,20 +108,25 @@ namespace Abiturient
             con.Close();
         }
 
-      //  public void Spec_Sub(string nameTable, string parametr1, string parametr2, int value1, int value2)
-      //  {
-      //      SqlConnection con = new SqlConnection(connectionstring);
-      //      con.Open();
-      //      Random rn = new Random();
-      //      SqlDataAdapter adapter = new SqlDataAdapter("SELECT * from " + nameTable, con);
-      //      adapter.InsertCommand = new SqlCommand("INSERT INTO " + nameTable + " (" + parametr1 + "," + parametr2 + ") VALUES (@value1, @value2 )", con);
-      //      adapter.InsertCommand.Parameters.Add("@value1", SqlDbType.Int);
-      //      adapter.InsertCommand.Parameters.Add("@value2", SqlDbType.Int);
-      //      adapter.InsertCommand.Parameters[0].Value = value1;
-      //      adapter.InsertCommand.Parameters[1].Value = value2;
-      //      adapter.InsertCommand.ExecuteNonQuery();
-      //      con.Close();
-      //  }
+
+        /// <summary>
+        /// Добавление записей в таблицу "Специальность-Предмет"
+        /// </summary>
+        /// <param name="nameTable"></param>
+        /// <param name="parametr1"></param>
+        /// <param name="parametr2"></param>
+        /// <param name="value1"></param>
+        /// <param name="value2"></param>
+        public void Spec_Sub(string nameTable, string parametr1, string parametr2, int value1, int value2)
+        {
+            SQLiteConnection con = new SQLiteConnection(connectionstring);
+            con.Open();
+            Random rn = new Random();
+            SQLiteDataAdapter adapter = new SQLiteDataAdapter("SELECT * from " + nameTable, con);
+            adapter.InsertCommand = new SQLiteCommand("INSERT INTO " + nameTable + " (" + parametr1 + "," + parametr2 + @") VALUES ('"+value1+"','"+value2+@"')",con);
+            adapter.InsertCommand.ExecuteNonQuery();
+            con.Close();
+        }
 
       //  public void Stud_Sub(string nameTable, string parametr1, string parametr2,string parametr3, int value1, int value2,int value3)
       //  {
@@ -200,17 +205,23 @@ namespace Abiturient
 
       //      con.Close();
       //  }
-      //  public SqlDataReader WriterTable(string nameTable)
-      //  {
-      //      SqlConnection con = new SqlConnection(connectionstring);
-      //      con.Open(); 
 
-      //      SqlDataAdapter adapter_read = new SqlDataAdapter("SELECT * from " + nameTable, con);
-      //      adapter_read.SelectCommand = new SqlCommand("SELECT * from " + nameTable, con);
-      //      SqlDataReader table_read = adapter_read.SelectCommand.ExecuteReader();
+        /// <summary>
+        /// Отображение таблицы
+        /// </summary>
+        /// <param name="nameTable"></param>
+        /// <returns></returns>
+        public SQLiteDataReader writerTable(string nameTable)
+        {
+            SQLiteConnection con = new SQLiteConnection(connectionstring);
+            con.Open();
 
-      //      return table_read;
-      //  }
+            SQLiteDataAdapter adapter_read = new SQLiteDataAdapter("SELECT * from " + nameTable, con);
+            adapter_read.SelectCommand = new SQLiteCommand("SELECT * from " + nameTable, con);
+            SQLiteDataReader table_read = adapter_read.SelectCommand.ExecuteReader();
+
+            return table_read;
+        }
 
       //  //public SqlDataReader Count(string nameTable)
       //  //{

@@ -41,7 +41,7 @@ namespace Abiturient
 
         private void BTN_specsubj_Click(object sender, EventArgs e)
         {
-            Spec_Subj spec_subj = new Spec_Subj();
+            Spec_Subj spec_subj = new Spec_Subj(connectionstring);
             spec_subj.Show();
         }
 
