@@ -19,7 +19,7 @@ namespace Abiturient
         }
  
         /// <summary>
-        /// Добавление записей в таблица Абитуриент
+        /// Добавление записей в таблицу Абитуриент, Предмет
         /// </summary>
         /// <param name="n"></param>
         /// <param name="nameTable"></param>
@@ -44,7 +44,7 @@ namespace Abiturient
 
 
         /// <summary>
-        /// Метод считывания и отображения таблицы Абитуриент
+        /// Метод считывания и отображения таблицы Абитуриент, Предмет
         /// </summary>
         /// <param name="nameTable"></param>
         /// <param name="DGV_abiturient"></param>

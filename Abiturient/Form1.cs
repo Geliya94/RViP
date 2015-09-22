@@ -29,7 +29,7 @@ namespace Abiturient
 
         private void BTN_subject_Click(object sender, EventArgs e)
         {
-            Subject form_subject = new Subject();
+            Subject form_subject = new Subject(connectionstring);
             form_subject.Show();
         }
 
