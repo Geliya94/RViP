@@ -19,21 +19,19 @@ namespace Abiturient
         }
  
         /// <summary>
-        /// Добавление записей в таблица Абитуриент
+        /// Добавление записей в таблицу Абитуриент, Предмет
         /// </summary>
         /// <param name="n"></param>
         /// <param name="nameTable"></param>
         /// <param name="parametr"></param>
         /// <param name="DGV_abiturient"></param>
         /// <param name="name"></param>
-        public void GenAdd(int n, string nameTable, string parametr, DataGridView DGV_abiturient, string name)
+        public void genAdd(int n, string nameTable, string parametr, DataGridView DGV_abiturient, string name)
         {
 
             SQLiteConnection con = new SQLiteConnection(connectionstring);
             con.Open();
             SQLiteDataAdapter adapter = new SQLiteDataAdapter("SELECT * from " + nameTable, con);
-            
-            //adapter.InsertCommand.Parameters.Add("@FIO", SqlDbType.Text);
             for (int i = 0; i < n; i++)
             {
                 adapter.InsertCommand = new SQLiteCommand("INSERT INTO " + nameTable + " (" + parametr + @") VALUES ('" + name + i.ToString() + @"')", con);
@@ -44,18 +42,18 @@ namespace Abiturient
 
 
         /// <summary>
-        /// Метод считывания и отображения таблицы Абитуриент
+        /// Метод считывания и отображения таблицы Абитуриент, Предмет
         /// </summary>
         /// <param name="nameTable"></param>
         /// <param name="DGV_abiturient"></param>
-        public void WriterTableStaudent(string nameTable, DataGridView DGV_abiturient)
+        public void writerTableStaudent(string nameTable, DataGridView DGV_abiturient)
         {
-            SqlConnection con = new SqlConnection(connectionstring);
+            SQLiteConnection con = new SQLiteConnection(connectionstring);
             con.Open();
 
-            SqlDataAdapter adapter_read = new SqlDataAdapter("SELECT * from " + nameTable, con);
-            adapter_read.SelectCommand = new SqlCommand("SELECT * from " + nameTable, con);
-            SqlDataReader table_read = adapter_read.SelectCommand.ExecuteReader();
+            SQLiteDataAdapter adapter_read = new SQLiteDataAdapter("SELECT * from " + nameTable, con);
+            adapter_read.SelectCommand = new SQLiteCommand("SELECT * from " + nameTable, con);
+            SQLiteDataReader table_read = adapter_read.SelectCommand.ExecuteReader();
 
             while (table_read.Read())
             {
@@ -101,22 +99,25 @@ namespace Abiturient
       //      con.Close();
       //  }
 
-      //  public void Stud_Sub(string nameTable, string parametr1, string parametr2,string parametr3, int value1, int value2,int value3)
-      //  {
-      //      SqlConnection con = new SqlConnection(connectionstring);
-      //      con.Open();
-      //      Random rn = new Random();
-      //      SqlDataAdapter adapter = new SqlDataAdapter("SELECT * from " + nameTable, con);
-      //      adapter.InsertCommand = new SqlCommand("INSERT INTO " + nameTable + " (" + parametr1 + "," + parametr2 +","+parametr3 +") VALUES (@value1, @value2,@value3 )", con);
-      //      adapter.InsertCommand.Parameters.Add("@value1", SqlDbType.Int);
-      //      adapter.InsertCommand.Parameters.Add("@value2", SqlDbType.Int);
-      //      adapter.InsertCommand.Parameters.Add("@value3", SqlDbType.Int);
-      //      adapter.InsertCommand.Parameters[0].Value = value1;
-      //      adapter.InsertCommand.Parameters[1].Value = value2;
-      //      adapter.InsertCommand.Parameters[2].Value = value3;
-      //      adapter.InsertCommand.ExecuteNonQuery();
-      //      con.Close();
-      //  }
+        /// <summary>
+        /// Добавление записи в таблицу "Абитуриент-Предмет"
+        /// </summary>
+        /// <param name="nameTable"></param>
+        /// <param name="parametr1"></param>
+        /// <param name="parametr2"></param>
+        /// <param name="parametr3"></param>
+        /// <param name="value1"></param>
+        /// <param name="value2"></param>
+        /// <param name="value3"></param>
+        public void Stud_Sub(string nameTable, string parametr1, string parametr2, int value1, int value2)
+        {
+            SQLiteConnection con = new SQLiteConnection(connectionstring);
+            con.Open();
+            SQLiteDataAdapter adapter = new SQLiteDataAdapter("SELECT * from " + nameTable, con);
+            adapter.InsertCommand = new SQLiteCommand("INSERT INTO " + nameTable + " (" + parametr1 + "," + parametr2 + @") VALUES ('" + value1 + @"','" + value2 + @"')", con);
+            adapter.InsertCommand.ExecuteNonQuery();
+            con.Close();
+        }
 
       //  public void WriterTableStaudent1(string nameTable, DataGridView DGV_abiturient)
       //  {
@@ -158,33 +159,46 @@ namespace Abiturient
       //      con.Close();
       //  }
       //  */
-      //  public void WriterTableStudentSubj(string nameTable, DataGridView DGV_abiturient)
-      //  {
-      //      SqlConnection con = new SqlConnection(connectionstring);
-      //      con.Open();
 
-      //      SqlDataAdapter adapter_read = new SqlDataAdapter("SELECT * from " + nameTable, con);
-      //      adapter_read.SelectCommand = new SqlCommand("SELECT * from " + nameTable, con);
-      //      SqlDataReader table_read = adapter_read.SelectCommand.ExecuteReader();
 
-      //      while (table_read.Read())
-      //      {
-      //          DGV_abiturient.Rows.Add(table_read.GetValue(0).ToString(), table_read.GetValue(1).ToString(), table_read.GetValue(2).ToString(), table_read.GetValue(3).ToString());
-      //      }
+        /// <summary>
+        /// Вывод таблицы "Абитуриент-Предмет"
+        /// </summary>
+        /// <param name="nameTable"></param>
+        /// <param name="DGV_abiturient"></param>
+        public void WriterTableStudentSubj(string nameTable, DataGridView DGV_abiturient)
+        {
+            SQLiteConnection con = new SQLiteConnection(connectionstring);
+            con.Open();
 
-      //      con.Close();
-      //  }
-      //  public SqlDataReader WriterTable(string nameTable)
-      //  {
-      //      SqlConnection con = new SqlConnection(connectionstring);
-      //      con.Open(); 
+            SQLiteDataAdapter adapter_read = new SQLiteDataAdapter("SELECT * from " + nameTable, con);
+            adapter_read.SelectCommand = new SQLiteCommand("SELECT * from " + nameTable, con);
+            SQLiteDataReader table_read = adapter_read.SelectCommand.ExecuteReader();
 
-      //      SqlDataAdapter adapter_read = new SqlDataAdapter("SELECT * from " + nameTable, con);
-      //      adapter_read.SelectCommand = new SqlCommand("SELECT * from " + nameTable, con);
-      //      SqlDataReader table_read = adapter_read.SelectCommand.ExecuteReader();
+            while (table_read.Read())
+            {
+                DGV_abiturient.Rows.Add(table_read.GetValue(0).ToString(), table_read.GetValue(1).ToString(), table_read.GetValue(2).ToString());
+            }
 
-      //      return table_read;
-      //  }
+            con.Close();
+        }
+
+        /// <summary>
+        /// Отображение таблицы
+        /// </summary>
+        /// <param name="nameTable"></param>
+        /// <returns></returns>
+        public SQLiteDataReader writerTable(string nameTable)
+        {
+            SQLiteConnection con = new SQLiteConnection(connectionstring);
+            con.Open();
+
+            SQLiteDataAdapter adapter_read = new SQLiteDataAdapter("SELECT * from " + nameTable, con);
+            adapter_read.SelectCommand = new SQLiteCommand("SELECT * from " + nameTable, con);
+            SQLiteDataReader table_read = adapter_read.SelectCommand.ExecuteReader();
+
+            return table_read;
+        }
 
       //  //public SqlDataReader Count(string nameTable)
       //  //{
@@ -283,7 +297,11 @@ namespace Abiturient
       //      return sum;
       //  }
 
-        public void Delete(string nametable)
+        /// <summary>
+        /// Удалить записи из таблицы
+        /// </summary>
+        /// <param name="nametable"></param>
+        public void delete(string nametable)
         {
             SQLiteConnection con = new SQLiteConnection(connectionstring);
             con.Open();

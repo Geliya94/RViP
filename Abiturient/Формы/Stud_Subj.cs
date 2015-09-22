@@ -8,22 +8,26 @@ using System.Text;
 using System.Windows.Forms;
 using System.Data.SqlClient;
 using System.Data.Sql;
+using System.Data.SQLite;
 
 namespace Abiturient
 {
     public partial class Stud_Subj : Form
     {
-        public Stud_Subj()
+        protected string connectionstring;
+        private Generation_Class generation_class;
+
+        public Stud_Subj(string connectionstring)
         {
+            this.connectionstring = connectionstring;
+            generation_class = new Generation_Class(connectionstring);
             InitializeComponent();
         }
-        static public string connectionstring = @"Data Source=.\SQLEXPRESS;AttachDbFilename=C:\Users\user\Documents\BD_RPIS.mdf;Integrated Security=True;Connect Timeout=30;User Instance=True";
-        Generation_Class generation_class = new Generation_Class(connectionstring); 
         
         private void button1_Click(object sender, EventArgs e)
         {
-            /*SqlDataReader read_sub = generation_class.WriterTable("Subject");
-            SqlDataReader read_stud = generation_class.WriterTable("Student");
+            SQLiteDataReader read_sub = generation_class.writerTable("Subject");
+            SQLiteDataReader read_stud = generation_class.writerTable("Abiturient");
 
             int count_mas = 5;
             int max = 0;
@@ -50,9 +54,9 @@ namespace Abiturient
                 }
             }
             Random rn= new Random();
-            int[] mas_sub_3 = new int[5];//Предположим, что каждый студент сдает все 5 предметов*/
+            int[] mas_sub_3 = new int[5];//Предположим, что каждый студент сдает все 5 предметов
 
-         /*   while (read_stud.Read())
+            /*while (read_stud.Read())
             {
                 for (int j = 0; j < 3; j++)
                 {
@@ -71,32 +75,30 @@ namespace Abiturient
                 }
                 for (int j = 0; j < mas_sub_3.Length; j++)
                 {
-                    generation_class.Stud_Sub("Student_subj", "ID_student", "ID_subj", "Scores", Convert.ToInt32(read_stud.GetValue(0).ToString()), mas_sub_3[j],Convert.ToInt32(rn.Next(50,80)) );
+                    generation_class.Stud_Sub("Student_subj", "ID_student", "ID_subj", Convert.ToInt32(read_stud.GetValue(0).ToString()), mas_sub_3[j]);
                 }
 
             }*/
-            //while (read_stud.Read())
-            //{
-            //    //Предположим, что каждый студент сдает все 5 предметов
-            //    mas_sub_3[0] = min;
-            //    mas_sub_3[1] = min + 1;
-            //    //mas_sub_3[2] = rn.Next(min + 2, max);
-            //    mas_sub_3[2] = min + 2;
-            //    mas_sub_3[3] = min + 3;
-            //    mas_sub_3[4] = max;
-            //    for (int j = 0; j < mas_sub_3.Length; j++)
-            //    {
-            //        //generation_class.Stud_Sub("Student_subj", "ID_student", "ID_subj", "Scores", Convert.ToInt32(read_stud.GetValue(0).ToString()), mas_sub_3[j], Convert.ToInt32(rn.Next(50, 80)));
-            //    }
-            //}
+            while (read_stud.Read())
+            {
+                //Предположим, что каждый студент сдает все 5 предметов
+                mas_sub_3[0] = min;
+                mas_sub_3[1] = min + 1;
+                mas_sub_3[2] = min + 2;
+                mas_sub_3[3] = min + 3;
+                mas_sub_3[4] = max;
+                for (int j = 0; j < mas_sub_3.Length; j++)
+                {
+                    generation_class.Stud_Sub("AbitSubj", "id_abit", "id_subj", Convert.ToInt32(read_stud.GetValue(0).ToString()), mas_sub_3[j]);
+                }
+            }
 
-            //generation_class.WriterTableStudentSubj("Student_subj", DGV_studsubj);
+            generation_class.WriterTableStudentSubj("AbitSubj", DGV_studsubj);
         }
 
         private void Stud_Subj_Load(object sender, EventArgs e)
         {
-            //generation_class.WriterTableStudentSubj("Student_subj", DGV_studsubj);
-       
+            generation_class.WriterTableStudentSubj("AbitSubj", DGV_studsubj);   
         }
 
         private void button2_Click(object sender, EventArgs e)
