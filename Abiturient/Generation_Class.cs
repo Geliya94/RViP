@@ -50,12 +50,12 @@ namespace Abiturient
         /// <param name="DGV_abiturient"></param>
         public void WriterTableStaudent(string nameTable, DataGridView DGV_abiturient)
         {
-            SqlConnection con = new SqlConnection(connectionstring);
+            SQLiteConnection con = new SQLiteConnection(connectionstring);
             con.Open();
 
-            SqlDataAdapter adapter_read = new SqlDataAdapter("SELECT * from " + nameTable, con);
-            adapter_read.SelectCommand = new SqlCommand("SELECT * from " + nameTable, con);
-            SqlDataReader table_read = adapter_read.SelectCommand.ExecuteReader();
+            SQLiteDataAdapter adapter_read = new SQLiteDataAdapter("SELECT * from " + nameTable, con);
+            adapter_read.SelectCommand = new SQLiteCommand("SELECT * from " + nameTable, con);
+            SQLiteDataReader table_read = adapter_read.SelectCommand.ExecuteReader();
 
             while (table_read.Read())
             {

@@ -35,8 +35,15 @@ namespace Abiturient
 
         private void Abiturient_Load(object sender, EventArgs e)
         {
-            /*string nameTable = "Abiturient";
-            generation_class.WriterTableStaudent(nameTable, DGV_abiturient);*/
+            try
+            {
+                string nameTable = "Abiturient";
+                generation_class.WriterTableStaudent(nameTable, DGV_abiturient);
+            }
+            catch
+            {
+                MessageBox.Show("Таблица пуста! Заполните ее!");
+            }
         }
 
         private void button1_Click(object sender, EventArgs e)
