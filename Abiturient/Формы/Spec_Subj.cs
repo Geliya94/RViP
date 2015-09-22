@@ -93,8 +93,14 @@ namespace Abiturient
 
         private void Spec_Subj_Load(object sender, EventArgs e)
         {
-            generation_class.writerTableStaudent1("Specsubj", DGC_specsubj);
-       
+            try
+            {
+                generation_class.writerTableStaudent1("Specsubj", DGC_specsubj);
+            }
+            catch
+            {
+                MessageBox.Show("Таблица пуста! Заполните ее!");
+            }
         }
     }
 }

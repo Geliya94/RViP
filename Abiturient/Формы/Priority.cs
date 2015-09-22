@@ -8,7 +8,6 @@ using System.Text;
 using System.Windows.Forms;
 using System.Data.SqlClient;
 using System.Data.Sql;
-using System.Data.Sql;
 using System.Data.SQLite;
 
 namespace Abiturient
@@ -131,7 +130,14 @@ namespace Abiturient
 
         private void Priority_Load(object sender, EventArgs e)
         {
-            generation_class.writerTableAbitSpec("AbitSpec", DGC_priority);
+            try
+            {
+                generation_class.writerTableAbitSpec("AbitSpec", DGC_priority);
+            }
+            catch
+            {
+                MessageBox.Show("Таблица пуста! Заполните ее!");
+            }
         }
     }
 }

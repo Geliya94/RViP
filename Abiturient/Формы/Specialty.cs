@@ -24,7 +24,9 @@ namespace Abiturient
         }
         private void Specialty_Load(object sender, EventArgs e)
         {
-            try {string nameTable = "Specialty";
+            try 
+            {
+            string nameTable = "Specialty";
             generation_class.writerTableStaudent1(nameTable, DGV_specialty);
             }
             catch
