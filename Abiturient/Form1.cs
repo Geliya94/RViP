@@ -14,7 +14,7 @@ namespace Abiturient
 {
     public partial class Form1 : Form
     {
-        public string connectionstring = @"Data Source=C:\Users\user\Documents\RViP\mydb.sqlite;Version=3";
+        public string connectionstring = @"Data Source=C:\Users\Шурупчик\Documents\RViP_abit\RViP\mydb.sqlite;Version=3";
         
         public Form1()
         {
@@ -110,6 +110,12 @@ namespace Abiturient
             SQLiteConnection.CreateFile(@"C:\Users\user\Documents\RViP\mydb.sqlite");
             DB db = new DB(connectionstring);
             db.createTables();
+        }
+
+        private void btn_srateList_Click(object sender, EventArgs e)
+        {
+            ListsStudents listStut = new ListsStudents(connectionstring);
+            listStut.createListsSpecWithAbit();
         }
     }
 }
