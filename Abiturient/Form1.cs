@@ -14,8 +14,8 @@ namespace Abiturient
 {
     public partial class Form1 : Form
     {
-        public string connectionstring = @"Data Source=C:\Users\Шурупчик\Documents\РВиП\mydb.sqlite;Version=3";
-        //static public string connectionstring = @"Data Source=.\SQLEXPRESS;AttachDbFilename=C:\Users\user\Documents\BD_RPIS.mdf;Integrated Security=True;Connect Timeout=30;User Instance=True";
+        public string connectionstring = @"Data Source=C:\Users\Шурупчик\Documents\RViP\repo\mydb.sqlite;Version=3";
+        
         public Form1()
         {
             InitializeComponent();
@@ -109,7 +109,7 @@ namespace Abiturient
 
         private void button1_Click(object sender, EventArgs e)
         {
-            SQLiteConnection.CreateFile(@"C:\Users\Шурупчик\Documents\РВиП\mydb.sqlite");
+            SQLiteConnection.CreateFile(@"C:\Users\Шурупчик\Documents\RViP\repo\mydb.sqlite");
             DB db = new DB(connectionstring);
             db.createTables();
         }

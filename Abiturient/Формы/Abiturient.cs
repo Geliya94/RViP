@@ -30,18 +30,25 @@ namespace Abiturient
             string parametr = "fio";
             string name = "Абитуриент";
             generation_class.GenAdd(n, nameTable, parametr, DGV_abiturient, name);
-            //generation_class.WriterTableStaudent(nameTable, DGV_abiturient);
+            generation_class.WriterTableStaudent(nameTable, DGV_abiturient);
         }   
 
         private void Abiturient_Load(object sender, EventArgs e)
         {
-            //string nameTable = "Student";
-            //generation_class.WriterTableStaudent(nameTable, DGV_abiturient);
+            try
+            {
+                string nameTable = "Abiturient";
+                generation_class.WriterTableStaudent(nameTable, DGV_abiturient);
+            }
+            catch
+            {
+                MessageBox.Show("Таблица пуста! Заполните ее!");
+            }
         }
 
         private void button1_Click(object sender, EventArgs e)
         {
-           // generation_class.Delete("Student");
+            generation_class.Delete("Abiturient");
             DGV_abiturient.Rows.Clear();
 
         }

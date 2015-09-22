@@ -42,22 +42,28 @@ namespace Abiturient
             con.Close();
         }
 
-      //  public void WriterTableStaudent(string nameTable, DataGridView DGV_abiturient)
-      //  {
-      //      SqlConnection con = new SqlConnection(connectionstring);
-      //      con.Open();
 
-      //      SqlDataAdapter adapter_read = new SqlDataAdapter("SELECT * from " + nameTable, con);
-      //      adapter_read.SelectCommand = new SqlCommand("SELECT * from " + nameTable, con);
-      //      SqlDataReader table_read = adapter_read.SelectCommand.ExecuteReader();
+        /// <summary>
+        /// Метод считывания и отображения таблицы Абитуриент
+        /// </summary>
+        /// <param name="nameTable"></param>
+        /// <param name="DGV_abiturient"></param>
+        public void WriterTableStaudent(string nameTable, DataGridView DGV_abiturient)
+        {
+            SQLiteConnection con = new SQLiteConnection(connectionstring);
+            con.Open();
 
-      //      while (table_read.Read())
-      //      {
-      //          DGV_abiturient.Rows.Add(table_read.GetValue(0).ToString(), table_read.GetValue(1).ToString());
-      //      }
+            SQLiteDataAdapter adapter_read = new SQLiteDataAdapter("SELECT * from " + nameTable, con);
+            adapter_read.SelectCommand = new SQLiteCommand("SELECT * from " + nameTable, con);
+            SQLiteDataReader table_read = adapter_read.SelectCommand.ExecuteReader();
 
-      //      con.Close();
-      //  }
+            while (table_read.Read())
+            {
+                DGV_abiturient.Rows.Add(table_read.GetValue(0).ToString(), table_read.GetValue(1).ToString());
+            }
+
+            con.Close();
+        }
 
 
 
@@ -277,15 +283,15 @@ namespace Abiturient
       //      return sum;
       //  }
 
-      //  public void Delete(string nametable)
-      //  {
-      //      SqlConnection con = new SqlConnection(connectionstring);
-      //      con.Open();
-      //      SqlDataAdapter adapter = new SqlDataAdapter("SELECT * from " + nametable, con);
-      //      adapter.DeleteCommand = new SqlCommand("Delete from " + nametable, con);
-      //      adapter.DeleteCommand.ExecuteNonQuery();
-      //      con.Close();
-      //  }
+        public void Delete(string nametable)
+        {
+            SQLiteConnection con = new SQLiteConnection(connectionstring);
+            con.Open();
+            SQLiteDataAdapter adapter = new SQLiteDataAdapter("SELECT * from " + nametable, con);
+            adapter.DeleteCommand = new SQLiteCommand("Delete from " + nametable, con);
+            adapter.DeleteCommand.ExecuteNonQuery();
+            con.Close();
+        }
 
       //  public SqlDataReader Spiski(int value)
       //  {
