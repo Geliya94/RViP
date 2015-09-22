@@ -9,7 +9,6 @@ namespace Abiturient
     class DB
     {
         protected string connectionstring;
-
         protected string tableAbiturient = @"CREATE TABLE Abiturient(id INTEGER PRIMARY KEY, fio TEXT)";
         protected string tableSubject = @"CREATE TABLE Subject(id INTEGER PRIMARY KEY, name TEXT)";
         protected string tableSpecialty = @"CREATE TABLE Specialty(id INTEGER PRIMARY KEY, name TEXT, amount INTEGER)";

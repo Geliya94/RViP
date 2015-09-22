@@ -91,9 +91,8 @@ namespace Abiturient
                 }
                 masprior[2] = 6 - masprior[0] - masprior[1];
 
-                for (int k = 0; k < masspec.Length; k++)
-                {
-                    int sum = 0;
+            //    for (int k = 0; k < masspec.Length; k++)
+              //  {
                     /*  SqlDataReader readsubj = generation_class.IdSubj(masspec[k]);
                       while (readsubj.Read())
                       {
@@ -105,7 +104,7 @@ namespace Abiturient
                       }*/
                     //  sum = generation_class.Sum(masspec[k],Convert.ToInt32(read_stud.GetValue(0)));
 
-                }
+              //  }
 
                 List<List> list_prio = new List<List>();
                 for (int k = 0; k < masspec.Length; k++)

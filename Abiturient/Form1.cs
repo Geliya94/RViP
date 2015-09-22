@@ -59,48 +59,48 @@ namespace Abiturient
 
         private void button2_Click(object sender, EventArgs e)
         {
-          //  Generation_Class generation_class = new Generation_Class(connectionstring);
-          //  SqlDataReader read_spec = generation_class.WriterTable("Specialty");
+            Generation_Class generation_class = new Generation_Class(connectionstring);
+            SQLiteDataReader read_spec = generation_class.writerTable("Specialty");
 
-          //  SqlDataReader read_spiski = generation_class.WriterTable("Priority");
-          //  List<List> list_spisok = new List<List>();
-          //  while (read_spiski.Read())
-          //  {
-          //      list_spisok.Add(new List { ID_student = Convert.ToInt32(read_spiski.GetValue(1)), ID_specialty = Convert.ToInt32(read_spiski.GetValue(2)), Prio = Convert.ToInt32(read_spiski.GetValue(3)), Sum = Convert.ToInt32(read_spiski.GetValue(4)) });                
-          //  }
+            SQLiteDataReader read_spiski = generation_class.writerTable("AbitSpec");
+            List<List> list_spisok = new List<List>();
+            while (read_spiski.Read())
+            {
+                list_spisok.Add(new List { ID_student = Convert.ToInt32(read_spiski.GetValue(1)), ID_specialty = Convert.ToInt32(read_spiski.GetValue(2)), Prio = Convert.ToInt32(read_spiski.GetValue(3)), Sum = Convert.ToInt32(read_spiski.GetValue(4)) });
+            }
 
-          //  List<ListSpec> listSpec = new List<ListSpec>();
-          //  while (read_spec.Read())
-          //  {
-          //      listSpec.Add(new ListSpec { ID = Convert.ToInt32(read_spec.GetValue(0)), Specialty = (read_spec.GetValue(1)).ToString(), Amount = Convert.ToInt32(read_spec.GetValue(2)) }); 
-          //  }
+            List<ListSpec> listSpec = new List<ListSpec>();
+            while (read_spec.Read())
+            {
+                listSpec.Add(new ListSpec { ID = Convert.ToInt32(read_spec.GetValue(0)), Specialty = (read_spec.GetValue(1)).ToString(), Amount = Convert.ToInt32(read_spec.GetValue(2)) });
+            }
 
-          //  int i = 0;
-          //foreach(var k in listSpec)
-          //  {
-          //    DataGridView dgv = new DataGridView();
-          //    DataGridView dgv1 = new DataGridView();
+            int i = 0;
+            foreach (var k in listSpec)
+            {
+                DataGridView dgv = new DataGridView();
+                DataGridView dgv1 = new DataGridView();
+                dgv.Name = "DGV" + i.ToString();
+                dgv.Width = 500;
+                dgv.Height = 500;
+                dgv.Left = 0;
+                dgv.Top = 0;
+                dgv.Columns.Add("123", "Номер_студента");
+                dgv.Columns.Add("123", "Приоритет");
+                dgv.Columns.Add("123", "Сумма баллов");
+                tabControl1.TabPages[i].Controls.Add(dgv);
+                dgv.AllowUserToAddRows = false;
+                dgv.AllowUserToDeleteRows = false;
+                foreach (var j in list_spisok)
+                {
+                    if (j.ID_specialty == k.ID)
+                    {
+                        dgv.Rows.Add(j.ID_student, j.Prio, j.Sum);
+                    }
 
-                    
-          //                  dgv.Name = "DGV" + i.ToString();
-          //                  dgv.Width = 500;
-          //                  dgv.Height = 500;
-          //                  dgv.Left = 0;
-          //                  dgv.Top = 0;
-          //                  dgv.Columns.Add("123", "Номер_студента");
-          //                  dgv.Columns.Add("123", "Приоритет");
-          //                  dgv.Columns.Add("123", "Сумма баллов");
-          //                  tabControl1.TabPages[i].Controls.Add(dgv);
-          //                  foreach (var j in list_spisok)
-          //                  {
-          //                      if (j.ID_specialty == k.ID)
-          //                      {
-          //                          dgv.Rows.Add(j.ID_student, j.Prio, j.Sum);
-          //                      }
-
-          //                  }
-          //              i++;  
-          //  }  
+                }
+                i++;
+            }  
         }
 
 

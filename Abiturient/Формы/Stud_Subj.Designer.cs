@@ -30,11 +30,10 @@
         {
             this.button1 = new System.Windows.Forms.Button();
             this.DGV_studsubj = new System.Windows.Forms.DataGridView();
+            this.button2 = new System.Windows.Forms.Button();
             this.ID = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.ID_st = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.ID_sub = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Scores = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.button2 = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.DGV_studsubj)).BeginInit();
             this.SuspendLayout();
             // 
@@ -57,13 +56,22 @@
             this.DGV_studsubj.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.ID,
             this.ID_st,
-            this.ID_sub,
-            this.Scores});
+            this.ID_sub});
             this.DGV_studsubj.Location = new System.Drawing.Point(12, 41);
             this.DGV_studsubj.Name = "DGV_studsubj";
             this.DGV_studsubj.ReadOnly = true;
             this.DGV_studsubj.Size = new System.Drawing.Size(637, 428);
             this.DGV_studsubj.TabIndex = 1;
+            // 
+            // button2
+            // 
+            this.button2.Location = new System.Drawing.Point(173, 12);
+            this.button2.Name = "button2";
+            this.button2.Size = new System.Drawing.Size(75, 23);
+            this.button2.TabIndex = 2;
+            this.button2.Text = "Очистить";
+            this.button2.UseVisualStyleBackColor = true;
+            this.button2.Click += new System.EventHandler(this.button2_Click);
             // 
             // ID
             // 
@@ -82,22 +90,6 @@
             this.ID_sub.HeaderText = "ID_sub";
             this.ID_sub.Name = "ID_sub";
             this.ID_sub.ReadOnly = true;
-            // 
-            // Scores
-            // 
-            this.Scores.HeaderText = "Scores";
-            this.Scores.Name = "Scores";
-            this.Scores.ReadOnly = true;
-            // 
-            // button2
-            // 
-            this.button2.Location = new System.Drawing.Point(173, 12);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(75, 23);
-            this.button2.TabIndex = 2;
-            this.button2.Text = "Очистить";
-            this.button2.UseVisualStyleBackColor = true;
-            this.button2.Click += new System.EventHandler(this.button2_Click);
             // 
             // Stud_Subj
             // 
@@ -119,10 +111,9 @@
 
         private System.Windows.Forms.Button button1;
         private System.Windows.Forms.DataGridView DGV_studsubj;
+        private System.Windows.Forms.Button button2;
         private System.Windows.Forms.DataGridViewTextBoxColumn ID;
         private System.Windows.Forms.DataGridViewTextBoxColumn ID_st;
         private System.Windows.Forms.DataGridViewTextBoxColumn ID_sub;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Scores;
-        private System.Windows.Forms.Button button2;
     }
 }
