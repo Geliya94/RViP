@@ -13,28 +13,36 @@ namespace Abiturient
 {
     public partial class Specialty : Form
     {
-        static public string connectionstring = @"Data Source=.\SQLEXPRESS;AttachDbFilename=C:\Users\user\Documents\BD_RPIS.mdf;Integrated Security=True;Connect Timeout=30;User Instance=True";
-        Generation_Class generation_class = new Generation_Class(connectionstring);
-        public Specialty()
+
+         protected string connectionstring;
+        private Generation_Class generation_class;
+        public Specialty(string connectionstring)
         {
             InitializeComponent();
+            this.connectionstring = connectionstring;
+            generation_class = new Generation_Class(this.connectionstring);
         }
-
         private void Specialty_Load(object sender, EventArgs e)
         {
-            //string nameTable = "Specialty";
-            //generation_class.WriterTableStaudent1(nameTable, DGV_specialty);
+            try {string nameTable = "Specialty";
+            generation_class.writerTableStaudent1(nameTable, DGV_specialty);
+            }
+            catch
+            {
+                MessageBox.Show("Таблица пуста! Заполните ее!");
+            }
         }
 
         private void BTN_generation_Click(object sender, EventArgs e)
         {
-            //int n = Convert.ToInt32(TB_abit.Text);
-            //string nameTable = "Specialty";
-            //string parametr1 = "Specialty";
-            //string parametr2 = "Amount";
-            //string name = "Специальность";
-            //generation_class.GenAdd1(n, nameTable, parametr1,parametr2, DGV_specialty, name);
-            //generation_class.WriterTableStaudent1(nameTable, DGV_specialty);
+            int n = Convert.ToInt32(TB_abit.Text);
+            string nameTable = "Specialty";
+            string parametr1 = "name";
+            string parametr2 = "amount";
+            string name = "Специальность";
+            generation_class.genAdd1(n, nameTable, parametr1,parametr2, DGV_specialty, name);
+            generation_class.writerTableStaudent1(nameTable, DGV_specialty);
+
         }
     }
 }

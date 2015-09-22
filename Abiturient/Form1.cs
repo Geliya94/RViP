@@ -14,7 +14,7 @@ namespace Abiturient
 {
     public partial class Form1 : Form
     {
-        public string connectionstring = @"Data Source=C:\Users\Шурупчик\Documents\RViP\repo\mydb.sqlite;Version=3";
+        public string connectionstring = @"Data Source=C:\Users\user\Documents\RViP\mydb.sqlite;Version=3";
         
         public Form1()
         {
@@ -35,7 +35,7 @@ namespace Abiturient
 
         private void BTN_specialty_Click(object sender, EventArgs e)
         {
-            Specialty form_specialty = new Specialty();
+            Specialty form_specialty = new Specialty(connectionstring);
             form_specialty.Show();
         }
 
@@ -109,7 +109,7 @@ namespace Abiturient
 
         private void button1_Click(object sender, EventArgs e)
         {
-            SQLiteConnection.CreateFile(@"C:\Users\Шурупчик\Documents\RViP\repo\mydb.sqlite");
+            SQLiteConnection.CreateFile(@"C:\Users\user\Documents\RViP\mydb.sqlite");
             DB db = new DB(connectionstring);
             db.createTables();
         }

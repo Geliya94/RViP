@@ -65,8 +65,6 @@ namespace Abiturient
             con.Close();
         }
 
-
-
       //  public void GenAdd1(int n, string nameTable, string parametr1,string parametr2, DataGridView DGV_abiturient, string name)
       //  {
       //      SqlConnection con = new SqlConnection(connectionstring);
@@ -85,6 +83,30 @@ namespace Abiturient
 
       //      con.Close();
       //  }
+
+        /// <summary>
+        /// Добавление записей в таблицу Специальность
+        /// </summary>
+        /// <param name="n"></param>
+        /// <param name="nameTable"></param>
+        /// <param name="parametr"></param>
+        /// <param name="parametr2"></param>
+        /// <param name="DGV_abiturient"></param>
+        /// <param name="name"></param>
+        public void genAdd1(int n, string nameTable, string parametr,string parametr2, DataGridView DGV_abiturient, string name)
+        {
+
+            SQLiteConnection con = new SQLiteConnection(connectionstring);
+            con.Open();
+            Random rn = new Random();
+            SQLiteDataAdapter adapter = new SQLiteDataAdapter("SELECT * from " + nameTable, con);
+            for (int i = 0; i < n; i++)
+            {
+                adapter.InsertCommand = new SQLiteCommand("INSERT INTO " + nameTable + " (" + parametr +","+parametr2+ @") VALUES ('" + name + i.ToString() +"','"+rn.Next(20,30)+ @"')", con);
+                adapter.InsertCommand.ExecuteNonQuery();
+            }
+            con.Close();
+        }
 
       //  public void Spec_Sub(string nameTable, string parametr1, string parametr2, int value1, int value2)
       //  {
@@ -117,23 +139,27 @@ namespace Abiturient
       //      adapter.InsertCommand.ExecuteNonQuery();
       //      con.Close();
       //  }
+        /// <summary>
+        /// Удаление таблицы Специальность
+        /// </summary>
+        /// <param name="nameTable"></param>
+        /// <param name="DGV_abiturient"></param>
+        public void writerTableStaudent1(string nameTable, DataGridView DGV_abiturient)
+        {
+            SQLiteConnection con = new SQLiteConnection(connectionstring);
+            con.Open();
 
-      //  public void WriterTableStaudent1(string nameTable, DataGridView DGV_abiturient)
-      //  {
-      //      SqlConnection con = new SqlConnection(connectionstring);
-      //      con.Open();
+            SQLiteDataAdapter adapter_read = new SQLiteDataAdapter("SELECT * from " + nameTable, con);
+            adapter_read.SelectCommand = new SQLiteCommand("SELECT * from " + nameTable, con);
+            SQLiteDataReader table_read = adapter_read.SelectCommand.ExecuteReader();
 
-      //      SqlDataAdapter adapter_read = new SqlDataAdapter("SELECT * from " + nameTable, con);
-      //      adapter_read.SelectCommand = new SqlCommand("SELECT * from " + nameTable, con);
-      //      SqlDataReader table_read = adapter_read.SelectCommand.ExecuteReader();
+            while (table_read.Read())
+            {
+                DGV_abiturient.Rows.Add(table_read.GetValue(0).ToString(), table_read.GetValue(1).ToString(), table_read.GetValue(2).ToString());
+            }
 
-      //      while (table_read.Read())
-      //      {
-      //          DGV_abiturient.Rows.Add(table_read.GetValue(0).ToString(), table_read.GetValue(1).ToString(), table_read.GetValue(2).ToString());
-      //      }
-
-      //      con.Close();
-      //  }
+            con.Close();
+        }
       ///*  public void WriterTableStaudent12(string nameTable, DataGridView DGV_abiturient)
       //  {
       //      SqlConnection con = new SqlConnection(connectionstring);
