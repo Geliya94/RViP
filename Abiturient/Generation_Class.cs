@@ -267,43 +267,47 @@ namespace Abiturient
       //      return table_read;
       //  }
 
-      //  public void Priority(string nameTable, string parametr1, string parametr2, string parametr3, string parametr4, int value1, int value2, int value3, int value4)
-      //  {
-      //      SqlConnection con = new SqlConnection(connectionstring);
-      //      con.Open();
-      //      Random rn = new Random();
-      //      SqlDataAdapter adapter = new SqlDataAdapter("SELECT * from " + nameTable, con);
-      //      adapter.InsertCommand = new SqlCommand("INSERT INTO " + nameTable + " (" + parametr1 + "," + parametr2 + "," + parametr3 + "," + parametr4 + ") VALUES (@value1, @value2, @value3, @value4)", con);
-      //      adapter.InsertCommand.Parameters.Add("@value1", SqlDbType.Int);
-      //      adapter.InsertCommand.Parameters.Add("@value2", SqlDbType.Int);
-      //      adapter.InsertCommand.Parameters.Add("@value3", SqlDbType.Int);
-      //      adapter.InsertCommand.Parameters.Add("@value4", SqlDbType.Int);
-      //      adapter.InsertCommand.Parameters[0].Value = value1;
-      //      adapter.InsertCommand.Parameters[1].Value = value2;
-      //      adapter.InsertCommand.Parameters[2].Value = value3;
-      //      adapter.InsertCommand.Parameters[3].Value = value4;
-      //      adapter.InsertCommand.ExecuteNonQuery();
-      //      con.Close();
-      //  }
+        /// <summary>
+        /// Добавление записи в таблицу "АбитуриентСпециальность"
+        /// </summary>
+        /// <param name="nameTable"></param>
+        /// <param name="parametr1"></param>
+        /// <param name="parametr2"></param>
+        /// <param name="parametr3"></param>
+        /// <param name="parametr4"></param>
+        /// <param name="value1"></param>
+        /// <param name="value2"></param>
+        /// <param name="value3"></param>
+        /// <param name="value4"></param>
+        public void AbitSpec(string nameTable, string parametr1, string parametr2, string parametr3, string parametr4, int value1, int value2, int value3, int value4)
+        {
+            SQLiteConnection con = new SQLiteConnection(connectionstring);
+            con.Open();
+            Random rn = new Random();
+            SQLiteDataAdapter adapter = new SQLiteDataAdapter("SELECT * from " + nameTable, con);
+           // adapter.InsertCommand = new SQliteCommand("INSERT INTO " + nameTable + " (" + parametr1 + "," + parametr2 + "," + parametr3 + "," + parametr4 + ") VALUES (@value1, @value2, @value3, @value4)", con);
+            adapter.InsertCommand = new SQLiteCommand("INSERT INTO " + nameTable + " (" + parametr1 + "," + parametr2 + "," + parametr3 + "," + parametr4 + @") VALUES ('" + value1 + "','" + value2 + "','" + value3 + "','" + value4 + @"')", con);
+            adapter.InsertCommand.ExecuteNonQuery();
+            con.Close();
+        }
 
 
 
-      //  public void WriterTablePriority(string nameTable, DataGridView DGV_abiturient)
-      //  {
-      //      SqlConnection con = new SqlConnection(connectionstring);
-      //      con.Open();
+        public void writerTableAbitSpec(string nameTable, DataGridView DGV_abiturient)
+        {
+            SqlConnection con = new SqlConnection(connectionstring);
+            con.Open();
+            SqlDataAdapter adapter_read = new SqlDataAdapter("SELECT * from " + nameTable, con);
+            adapter_read.SelectCommand = new SqlCommand("SELECT * from " + nameTable, con);
+            SqlDataReader table_read = adapter_read.SelectCommand.ExecuteReader();
 
-      //      SqlDataAdapter adapter_read = new SqlDataAdapter("SELECT * from " + nameTable, con);
-      //      adapter_read.SelectCommand = new SqlCommand("SELECT * from " + nameTable, con);
-      //      SqlDataReader table_read = adapter_read.SelectCommand.ExecuteReader();
+            while (table_read.Read())
+            {
+                DGV_abiturient.Rows.Add(table_read.GetValue(0).ToString(), table_read.GetValue(1).ToString(), table_read.GetValue(2).ToString(), table_read.GetValue(3).ToString(), table_read.GetValue(4).ToString());
+            }
 
-      //      while (table_read.Read())
-      //      {
-      //          DGV_abiturient.Rows.Add(table_read.GetValue(0).ToString(), table_read.GetValue(1).ToString(), table_read.GetValue(2).ToString(), table_read.GetValue(3).ToString(), table_read.GetValue(4).ToString());
-      //      }
-
-      //      con.Close();
-      //  }
+            con.Close();
+        }
 
       //  public int Sum(int idspec, int idstud)
       //  {

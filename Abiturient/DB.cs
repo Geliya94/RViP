@@ -14,7 +14,7 @@ namespace Abiturient
         protected string tableSubject = @"CREATE TABLE Subject(id INTEGER PRIMARY KEY, name TEXT)";
         protected string tableSpecialty = @"CREATE TABLE Specialty(id INTEGER PRIMARY KEY, name TEXT, amount INTEGER)";
         protected string tableAbitSubj = @"CREATE TABLE AbitSubj(id INTEGER PRIMARY KEY, id_abit INTEGER, id_subj INTEGER)";
-        protected string tableAbitSpec = @"CREATE TABLE AbitSpec(id INTEGER PRIMARY KEY, id_abit INTEGER, id_spec INTEGER, scores INTEGER)";
+        protected string tableAbitSpec = @"CREATE TABLE AbitSpec(id INTEGER PRIMARY KEY, id_abit INTEGER, id_spec INTEGER, prior INTEGER, scores INTEGER)";
         protected string tableSpecSubj = @"CREATE TABLE SpecSubj(id INTEGER PRIMARY KEY, id_spec INTEGER, id_subj INTEGER)";        
 
         public DB(string connectionstring)

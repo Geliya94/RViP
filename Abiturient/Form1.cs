@@ -53,11 +53,9 @@ namespace Abiturient
 
         private void BTN_priority_Click(object sender, EventArgs e)
         {
-            Priority form_prior = new Priority();
+            Priority form_prior = new Priority(connectionstring);
             form_prior.Show();
         }
-
-
 
         private void button2_Click(object sender, EventArgs e)
         {
