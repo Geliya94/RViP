@@ -21,10 +21,17 @@ namespace Abiturient
             
         }
 
+        public List<SpecialtyClass> WriterLists()
+        {
+            createListsSpecWithAbit();
+            sortLists();
+            return listSpecWithAbit;
+        }
+
         /// <summary>
         /// Создание списков абитуриентов по каждой специальности
         /// </summary>
-        public void createListsSpecWithAbit()
+        private void createListsSpecWithAbit()
         {
             DataTable dt_spec = db.readTableSpecialty();
             foreach(DataRow row_spec in dt_spec.Rows)
@@ -44,6 +51,19 @@ namespace Abiturient
                 listAbit.Add(abit);
             }
             return listAbit;
+        }
+
+        /// <summary>
+        /// Отсортировать списки абитуриентов
+        /// </summary>
+        private void sortLists()
+        {
+            foreach (var i in listSpecWithAbit)
+            {
+                i.listAbitur.Sort(delegate(ListAbiturienClass ab1, ListAbiturienClass ab2)
+                { return ab1.Scores.CompareTo(ab2.Scores); });
+                i.listAbitur.Reverse();
+            }
         }
     }
 }
