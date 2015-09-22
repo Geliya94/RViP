@@ -86,3 +86,6 @@ C:\Users\Шурупчик\Documents\RViP\repo\Abiturient\obj\x86\Debug\Abiturien
 C:\Users\Шурупчик\Documents\RViP\repo\Abiturient\obj\x86\Debug\Abiturient.csproj.GenerateResource.Cache
 C:\Users\Шурупчик\Documents\RViP\repo\Abiturient\bin\Debug\Abiturient.exe
 C:\Users\Шурупчик\Documents\RViP\repo\Abiturient\bin\Debug\Abiturient.pdb
+C:\Users\Шурупчик\Documents\RViP_abit\RViP\Abiturient\bin\Debug\Abiturient.exe.config
+C:\Users\Шурупчик\Documents\RViP_abit\RViP\Abiturient\obj\x86\Debug\Abiturient.exe
+C:\Users\Шурупчик\Documents\RViP_abit\RViP\Abiturient\obj\x86\Debug\Abiturient.pdb
