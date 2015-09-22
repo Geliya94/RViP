@@ -1,0 +1,43 @@
+C:\Users\user\AppData\Local\Temporary Projects\Abiturient\bin\Debug\Abiturient.exe
+C:\Users\user\AppData\Local\Temporary Projects\Abiturient\bin\Debug\Abiturient.pdb
+C:\Users\user\AppData\Local\Temporary Projects\Abiturient\obj\x86\Debug\Abiturient.Abiturient.resources
+C:\Users\user\AppData\Local\Temporary Projects\Abiturient\obj\x86\Debug\Abiturient.Form1.resources
+C:\Users\user\AppData\Local\Temporary Projects\Abiturient\obj\x86\Debug\Abiturient.Properties.Resources.resources
+C:\Users\user\AppData\Local\Temporary Projects\Abiturient\obj\x86\Debug\Abiturient.Specialty.resources
+C:\Users\user\AppData\Local\Temporary Projects\Abiturient\obj\x86\Debug\Abiturient.Subject.resources
+C:\Users\user\AppData\Local\Temporary Projects\Abiturient\obj\x86\Debug\Abiturient.csproj.GenerateResource.Cache
+C:\Users\user\AppData\Local\Temporary Projects\Abiturient\obj\x86\Debug\Abiturient.exe
+C:\Users\user\AppData\Local\Temporary Projects\Abiturient\obj\x86\Debug\Abiturient.pdb
+C:\Users\user\AppData\Local\Temporary Projects\Abiturient\obj\x86\Debug\Abiturient.Spec_Subj.resources
+C:\Users\user\Desktop\учеба\исэбд41\рвип\Abiturient\Abiturient\bin\Debug\Abiturient.exe
+C:\Users\user\Desktop\учеба\исэбд41\рвип\Abiturient\Abiturient\bin\Debug\Abiturient.pdb
+C:\Users\user\Desktop\учеба\исэбд41\рвип\Abiturient\Abiturient\obj\x86\Debug\Abiturient.Abiturient.resources
+C:\Users\user\Desktop\учеба\исэбд41\рвип\Abiturient\Abiturient\obj\x86\Debug\Abiturient.Form1.resources
+C:\Users\user\Desktop\учеба\исэбд41\рвип\Abiturient\Abiturient\obj\x86\Debug\Abiturient.Properties.Resources.resources
+C:\Users\user\Desktop\учеба\исэбд41\рвип\Abiturient\Abiturient\obj\x86\Debug\Abiturient.Specialty.resources
+C:\Users\user\Desktop\учеба\исэбд41\рвип\Abiturient\Abiturient\obj\x86\Debug\Abiturient.Spec_Subj.resources
+C:\Users\user\Desktop\учеба\исэбд41\рвип\Abiturient\Abiturient\obj\x86\Debug\Abiturient.Subject.resources
+C:\Users\user\Desktop\учеба\исэбд41\рвип\Abiturient\Abiturient\obj\x86\Debug\Abiturient.csproj.GenerateResource.Cache
+C:\Users\user\Desktop\учеба\исэбд41\рвип\Abiturient\Abiturient\obj\x86\Debug\Abiturient.exe
+C:\Users\user\Desktop\учеба\исэбд41\рвип\Abiturient\Abiturient\obj\x86\Debug\Abiturient.pdb
+C:\Users\user\Desktop\учеба\исэбд41\рвип\Abiturient\Abiturient\obj\x86\Debug\Abiturient.Stud_Subj.resources
+C:\Users\user\Desktop\учеба\исэбд41\рвип\Abiturient\Abiturient\obj\x86\Debug\Abiturient.Priority.resources
+C:\Users\user\Desktop\учеба\исэбд41\рвип\Abiturient\Abiturient\obj\x86\Debug\Abiturient.csprojResolveAssemblyReference.cache
+C:\Users\user\Desktop\учеба\исэбд41\рвип\Abiturient\Abiturient\obj\x86\Debug\Abiturient.Svyaz.resources
+C:\Users\user\Desktop\учеба\исэбд41\рвип\Laba1\Лаба1\Abiturient\Abiturient\obj\x86\Debug\Abiturient.exe
+C:\Users\user\Desktop\учеба\исэбд41\рвип\Laba1\Лаба1\Abiturient\Abiturient\obj\x86\Debug\Abiturient.pdb
+C:\Users\user\Desktop\учеба\исэбд41\рвип\Laba1\Лаба1\Abiturient\Abiturient\obj\x86\Debug\Abiturient.csprojResolveAssemblyReference.cache
+C:\Users\user\Desktop\учеба\исэбд41\рвип\Laba1\Лаба1\Abiturient\Abiturient\obj\x86\Debug\Abiturient.Abiturient.resources
+C:\Users\user\Desktop\учеба\исэбд41\рвип\Laba1\Лаба1\Abiturient\Abiturient\obj\x86\Debug\Abiturient.Form1.resources
+C:\Users\user\Desktop\учеба\исэбд41\рвип\Laba1\Лаба1\Abiturient\Abiturient\obj\x86\Debug\Abiturient.Priority.resources
+C:\Users\user\Desktop\учеба\исэбд41\рвип\Laba1\Лаба1\Abiturient\Abiturient\obj\x86\Debug\Abiturient.Properties.Resources.resources
+C:\Users\user\Desktop\учеба\исэбд41\рвип\Laba1\Лаба1\Abiturient\Abiturient\obj\x86\Debug\Abiturient.Specialty.resources
+C:\Users\user\Desktop\учеба\исэбд41\рвип\Laba1\Лаба1\Abiturient\Abiturient\obj\x86\Debug\Abiturient.Spec_Subj.resources
+C:\Users\user\Desktop\учеба\исэбд41\рвип\Laba1\Лаба1\Abiturient\Abiturient\obj\x86\Debug\Abiturient.Stud_Subj.resources
+C:\Users\user\Desktop\учеба\исэбд41\рвип\Laba1\Лаба1\Abiturient\Abiturient\obj\x86\Debug\Abiturient.Subject.resources
+C:\Users\user\Desktop\учеба\исэбд41\рвип\Laba1\Лаба1\Abiturient\Abiturient\obj\x86\Debug\Abiturient.Svyaz.resources
+C:\Users\user\Desktop\учеба\исэбд41\рвип\Laba1\Лаба1\Abiturient\Abiturient\obj\x86\Debug\Abiturient.csproj.GenerateResource.Cache
+C:\Users\user\Desktop\учеба\исэбд41\рвип\Laba1\Лаба1\Abiturient\Abiturient\bin\Debug\Abiturient.exe
+C:\Users\user\Desktop\учеба\исэбд41\рвип\Laba1\Лаба1\Abiturient\Abiturient\bin\Debug\Abiturient.pdb
+C:\Users\user\Desktop\учеба\исэбд41\рвип\Laba1\Лаба1\Abiturient\Abiturient\bin\Debug\System.Data.SQLite.dll
+C:\Users\user\Desktop\учеба\исэбд41\рвип\Laba1\Лаба1\Abiturient\Abiturient\bin\Debug\Abiturient.exe.config
