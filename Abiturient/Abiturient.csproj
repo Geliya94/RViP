@@ -49,6 +49,11 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="ClassObjects\AbiturientClass.cs" />
+    <Compile Include="ClassObjects\ListAbiturienClass.cs" />
+    <Compile Include="ClassObjects\ListSpecClass.cs" />
+    <Compile Include="ClassObjects\SpecialtyClass.cs" />
+    <Compile Include="ClassObjects\SubjectClass.cs" />
     <Compile Include="Формы\Abiturient.cs">
       <SubType>Form</SubType>
     </Compile>
