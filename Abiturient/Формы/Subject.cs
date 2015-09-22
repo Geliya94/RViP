@@ -29,14 +29,14 @@ namespace Abiturient
             string nameTable = "Subject";
             string parametr = "name";
             string name = "Предмет";
-            generation_class.GenAdd(n, nameTable, parametr, DGV_subject, name);
-            generation_class.WriterTableStaudent(nameTable, DGV_subject);
+            generation_class.genAdd(n, nameTable, parametr, DGV_subject, name);
+            generation_class.writerTableStaudent(nameTable, DGV_subject);
         }
 
         private void Subject_Load(object sender, EventArgs e)
         {
             string nameTable = "Subject";
-            generation_class.WriterTableStaudent(nameTable, DGV_subject);
+            generation_class.writerTableStaudent(nameTable, DGV_subject);
         }
 
     }

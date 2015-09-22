@@ -47,7 +47,7 @@ namespace Abiturient
 
         private void BTN_abitsubj_Click(object sender, EventArgs e)
         {
-            Stud_Subj form_studsubj = new Stud_Subj();
+            Stud_Subj form_studsubj = new Stud_Subj(connectionstring);
             form_studsubj.Show();
         }
 

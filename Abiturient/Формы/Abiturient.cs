@@ -29,8 +29,8 @@ namespace Abiturient
             string nameTable = "Abiturient";
             string parametr = "fio";
             string name = "Абитуриент";
-            generation_class.GenAdd(n, nameTable, parametr, DGV_abiturient, name);
-            generation_class.WriterTableStaudent(nameTable, DGV_abiturient);
+            generation_class.genAdd(n, nameTable, parametr, DGV_abiturient, name);
+            generation_class.writerTableStaudent(nameTable, DGV_abiturient);
         }   
 
         private void Abiturient_Load(object sender, EventArgs e)
@@ -38,7 +38,7 @@ namespace Abiturient
             try
             {
                 string nameTable = "Abiturient";
-                generation_class.WriterTableStaudent(nameTable, DGV_abiturient);
+                generation_class.writerTableStaudent(nameTable, DGV_abiturient);
             }
             catch
             {
@@ -48,7 +48,7 @@ namespace Abiturient
 
         private void button1_Click(object sender, EventArgs e)
         {
-            generation_class.Delete("Abiturient");
+            generation_class.delete("Abiturient");
             DGV_abiturient.Rows.Clear();
 
         }
