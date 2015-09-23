@@ -93,12 +93,22 @@ namespace Abiturient
                 tabControl1.TabPages[i].Controls.Add(dgv);
                 dgv.AllowUserToAddRows = false;
                 dgv.AllowUserToDeleteRows = false;
-                foreach (var j in k.listAbitur)
-                {
-                    dgv.Rows.Add(j.ID, j.Prior, j.Scores);
 
-                }
+                
+                    foreach (var j in k.listAbitur)
+                    {
+                        dgv.Rows.Add(j.ID, j.Prior, j.Scores);
+
+                    }
                 i++;
+
+                /*if (dgv.RowCount != 0)
+                {
+                    for (int l = 0; l < k.Amount; l++)
+                    {
+                        dgv.Rows[l].DefaultCellStyle.BackColor = Color.LightCoral;
+                    }
+                }*/
             } 
             /*int i = 0;
             foreach (var k in listSpec)
@@ -132,7 +142,7 @@ namespace Abiturient
 
         private void button1_Click(object sender, EventArgs e)
         {
-            SQLiteConnection.CreateFile(@"C:\Users\user\Documents\RViP\mydb.sqlite");
+            SQLiteConnection.CreateFile(@"C:\Users\Шурупчик\Documents\RViP_abit\RViP\mydb.sqlite");
             DB db = new DB(connectionstring);
             db.createTables();
         }

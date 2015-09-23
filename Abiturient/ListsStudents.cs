@@ -25,6 +25,7 @@ namespace Abiturient
         {
             createListsSpecWithAbit();
             sortLists();
+            selectPrior(1);
             return listSpecWithAbit;
         }
 
@@ -56,13 +57,53 @@ namespace Abiturient
         /// <summary>
         /// Отсортировать списки абитуриентов
         /// </summary>
-        private void sortLists()
+        public void sortLists()
         {
             foreach (var i in listSpecWithAbit)
             {
                 i.listAbitur.Sort(delegate(ListAbiturienClass ab1, ListAbiturienClass ab2)
                 { return ab1.Scores.CompareTo(ab2.Scores); });
                 i.listAbitur.Reverse();
+            }
+        }
+
+        private void selectPrior(int prior)
+        {
+            foreach (var i in listSpecWithAbit)
+            {
+                int studCount = 0;
+                foreach(var j in i.listAbitur)
+                {
+                    if(studCount!=i.Amount)
+                    if (j.Prior == prior)
+                    {
+                        deleteAbitur(j.ID, i.ID);
+                    }
+                    studCount++;
+                }
+            }
+        }
+
+        private void deleteAbitur(int id_abit, int id_spec)
+        {
+            foreach (var i in listSpecWithAbit)
+            {
+                if (i.ID != id_spec)
+                {
+                    delete(id_abit, i.listAbitur);
+                }
+            }
+        }
+
+        private void delete(int id_abit, List<ListAbiturienClass> i)
+        {
+            foreach (var j in i)
+            {
+                if (j.ID == id_abit)
+                {
+                    i.Remove(j);
+                    break;
+                }
             }
         }
     }
